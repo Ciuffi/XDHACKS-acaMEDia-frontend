@@ -66,9 +66,16 @@
         </homeContent>
         <homeContent class="contact" style="margin-top: 20%; margin-left: auto; margin-right: auto;" title="Contact">
             <div>
-                <p>
-                    Created by <a href="https://www.linkedin.com/in/allison-chiang">Allison Chiang</a>, <a href="https://www.linkedin.com/in/austinkobayashi">Austin Kobayashi</a>  and <a href="https://www.linkedin.com/in/giulio-rossi-662152110">Giulio Rossi</a>
-                </p>
+                <img class="creator-image" left src="../assets/Allison.jpg" alt="Allison Chiang"/>
+                <a href="https://www.linkedin.com/in/allison-chiang">Allison Chiang</a>
+            </div>
+            <div>
+                <img right class="creator-image" src="../assets/Austin.jpg" alt="Austin Kobayashi"/>
+                <a href="https://www.linkedin.com/in/austinkobayashi">Austin Kobayashi</a>
+            </div>
+            <div>
+                <img center class="creator-image" src="../assets/Giulio.jpeg" alt="Giulio Rossi"> />
+                <a href="https://www.linkedin.com/in/giulio-rossi-662152110">Giulio Rossi</a>
             </div>
         </homeContent>
     </div>
@@ -99,6 +106,18 @@
 </script>
 
 <style scoped>
+    .contact{
+        width: 100%;
+        text-align: center;
+    }
+    .creator-image{
+        max-width:250px;
+        max-height:250px;
+        width: auto;
+        height: auto;
+        display: inline-block;
+    }
+
     .home{
         background-color: #d8e5f8;
         color: #6c6c77;
