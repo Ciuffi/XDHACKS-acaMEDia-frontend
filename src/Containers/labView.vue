@@ -5,7 +5,7 @@
             <img id="profile-shelf" src="../assets/acamedia-profile.png" style="display: inline-block;">
         </div>
         <h2 style="color: #4886ca; font-family: Marion, 'Times New Roman', Serif; font-weight: bold; ">{{lab.name}}</h2>
-        <button class="btn btn-light" style="margin: 5px;">Visit Lab Website</button>
+        <a class="btn btn-light" v-bind:href="lab.url" target="_blank" style="margin: 5px;">Visit Lab Website</a>
         <br style="clear: both;"/>
         <div id="data">
             <p>Lab Location: {{lab.location}}</p>
