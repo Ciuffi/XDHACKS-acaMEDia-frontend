@@ -9,7 +9,7 @@
         <br style="clear: both;"/>
         <div id="data">
             <p>Lab Location: {{lab.location}}</p>
-            <p>Principal Investigator: {{lab.person.name}} ( {{lab.person.email}} )</p>
+            <p>Principal Investigator: {{lab.person.name}} ( <a v-bind:href="'mailto:' +lab.person.email">{{lab.person.email}}</a> )</p>
             <h3 style="color: #4886ca; font-family: Marion, 'Times New Roman', Serif; font-weight: bold; ">Recent Publications: </h3>
             <div id="articleItem" v-for="article in lab.articles">
                 <p>Article Name: {{article.title}}</p>

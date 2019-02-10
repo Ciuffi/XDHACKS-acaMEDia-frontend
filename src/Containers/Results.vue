@@ -1,6 +1,6 @@
 <template>
     <div id="Results">
-        <button class="btn btn-light" style="margin: 5px;" v-on:click="back">Go Back</button>
+        <button class="btn btn-light" style="margin: 10px; margin-top: 20px" v-on:click="back">Go Back</button>
         <div id="results-shelf-container" style="text-align: center; margin-top: 5%;">
             <img id="results-shelf" src="../assets/acamedia-results.png" style="display: inline-block;">
         </div>
