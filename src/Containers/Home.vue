@@ -27,9 +27,6 @@
                     </div>
                 </div>
                 <br style="clear: both;"/>
-                <div id="beaker-container">
-                    <img id="beaker" src="../assets/acamedia-beaker.png">
-                </div>
                 <div id="about-two">
                     <p>
                         Whether it's an undergraduate student looking to kickstart their lifelong passion in a scientific
@@ -38,29 +35,31 @@
                         more young minds in contact with medical research.
                     </p>
                 </div>
-                <br style="clear: both;"/>
-                <div id="about-three">
-                    <p>
-                        A user can access the home page and enter keywords for their interested field of study in the search bar,
-                        optionally also entering a location filter for country and city of potential lab results.
-                    </p>
-                    <p>
-                        Upon starting the search,
-                        the user will be directed to a page of search results comprised of labs with the most publications related to their search query,
-                        and the user may read more about the lab and its research by clicking on the result name.
-                    </p>
-                    <p>
-                        The user can then access the lab profile,
-                        which consists of recent publications, the lab's website, and the lab's focus.
-                    </p>
-                </div>
-                <div id="octocat-container">
-                    <img id="octocat" src="../assets/acamedia-octocat.png">
-                </div>
-                <br style="clear: both;"/>
             </div>
             <div class="container" id="bottom-shelf-container">
                 <img id="bottom-shelf-img" class="logo" alt="acaMEDia logo" src="../assets/acamedia-bottom-shelf.png">
+            </div>
+            <br style="clear: both;"/>
+        </homeContent>
+        <homeContent class="how-to" style="margin-top: 20%; margin-left: auto; margin-right: auto;" title="How-To">
+            <br style="clear: both;"/>
+            <div id="how-to-use">
+                <p>
+                    A user can access the home page and enter keywords for their interested field of study in the search bar,
+                    optionally also entering a location filter for country and city of potential lab results.
+                </p>
+                <p>
+                    Upon starting the search,
+                    the user will be directed to a page of search results comprised of labs with the most publications related to their search query,
+                    and the user may read more about the lab and its research by clicking on the result name.
+                </p>
+                <p>
+                    The user can then access the lab profile,
+                    which consists of recent publications, the lab's website, and the lab's focus.
+                </p>
+            </div>
+            <div id="octocat-container">
+                <img id="octocat" src="../assets/acamedia-octocat.png">
             </div>
             <br style="clear: both;"/>
         </homeContent>
@@ -91,7 +90,12 @@
             </div>
         </homeContent>
         <div style="text-align: center;">
-            <a href="/#" class="btn btn-outline-secondary" style="display: inline-block; margin: 10%;">Back To Top</a>
+            <div id="beaker-container">
+                <img id="beaker" src="../assets/acamedia-beaker.png">
+            </div>
+            <br style="clear: both;"/>
+            <a href="/#" class="btn btn-outline-secondary" style="display: inline-block; margin: 10px;">Back To Top</a>
+            <br style="clear: both;"/>
             <p> Copyright (c) acaMEDia 2019   ||   Made with love in Vancouver, BC </p>
         </div>
     </div>
@@ -148,7 +152,8 @@
     }
     #about-one {
         margin: 70px;
-        width: 40%;
+        width: 30%;
+        margin-left: 20%;
         float: left;
         height: auto;
     }
@@ -179,15 +184,11 @@
     }
     #beaker-container{
         width: 40%;
-        float: left;
-        padding: 2px;
-        position: absolute;
+        display: inline-block;
+        margin-top: 40px;
     }
     #beaker{
-        height: 250px;
-        padding-left: 30px;
-        position: absolute;
-        left: 0;
+        max-height: 250px;
     }
     @keyframes aniup {
         0% {
@@ -202,14 +203,12 @@
     }
     #about-two {
         display: inline-block;
-        margin: 70px;
+        margin-top: 20%;
         width: 40%;
-        clear: right;
-        float: right;
         height: auto;
     }
 
-    #about-three {
+    #how-to-use {
         display: inline-block;
         margin: 70px;
         width: 40%;
@@ -230,12 +229,14 @@
         x-transition: all 1.5s ease-in-out;
         animation: aniup 2.5s infinite;
     }
-    .about, .contact{
+    .about, .how-to, .contact {
         position: relative;
         width: 100%;
         text-align: center;
     }
-    .contact-creator{
+    .about {
+        margin-bottom: 20%;
+    }.contact-creator{
         display: inline-block;
     }
     .creator-name{
