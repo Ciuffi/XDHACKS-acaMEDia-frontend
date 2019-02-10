@@ -1,6 +1,6 @@
 <template>
     <div id="Results">
-        <div id="results-shelf-container" style="text-align: center;">
+        <div id="results-shelf-container" style="text-align: center; margin-top: 5%;">
             <img id="results-shelf" src="../assets/acamedia-results.png" style="display: inline-block;">
         </div>
         <div id="labItems">
