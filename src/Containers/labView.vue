@@ -8,7 +8,7 @@
             <p style="padding-left: 5%">Person Email: {{lab.person.email}}</p>
             <div id="articleItem" v-for="article in lab.articles">
                 <p>Article Name: {{article.title}}</p>
-                <p>Article Date {{article.date.toString()}}</p>
+                <p>Article Date {{formatDate(article.date)}}</p>
             </div>
         </div>
     </div>
@@ -17,7 +17,23 @@
 <script>
     export default {
         name: "labView",
-        props: ["lab", "back"]
+        props: ["lab", "back"],
+        methods:{
+            formatDate: function (date) {
+                var monthNames = [
+                    "January", "February", "March",
+                    "April", "May", "June", "July",
+                    "August", "September", "October",
+                    "November", "December"
+                ];
+
+                var day = date.getDate();
+                var monthIndex = date.getMonth();
+                var year = date.getFullYear();
+
+                return day + ' ' + monthNames[monthIndex] + ' ' + year;
+            }
+        }
     }
 </script>
 
