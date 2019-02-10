@@ -1,6 +1,8 @@
 <template>
     <div id="Results">
-        <h1>Results</h1>
+        <div id="results-shelf-container" style="text-align: center;">
+            <img id="results-shelf" src="../assets/acamedia-results.png" style="display: inline-block;">
+        </div>
         <div id="labItems">
             <lab-item v-bind:go-to-lab-view="goToLabView" v-for="lab in queryResponse" v-bind:lab="lab"></lab-item>
             <h2 v-if="!queryResponse">No Results :(</h2>
