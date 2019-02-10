@@ -1,6 +1,11 @@
 <template>
     <div class="home" id="home">
         <div class="container" id="header-container">
+            <div id="posty-container">
+                <img class="posty" id="blue-posty" src="../assets/blue-posty.png"/>
+                <img class="posty" id="yellow-posty" src="../assets/yellow-posty.png"/>
+                <img class="posty" id="orange-posty" src="../assets/orange-posty.png"/>
+            </div>
             <img id="header-img" class="logo" alt="acaMEDia logo" src="../assets/acamedia-header.png">
             <div id="stuff-on-header-img">
                 <search-bar v-on:search="searchHandler"></search-bar>
@@ -12,6 +17,7 @@
             <div id="about-stuff">
                 <div class="about-row-container">
                     <div id="about-one">
+                        <h2 style="color: #4886ca; font-family: Marion, 'Times New Roman', Serif; font-weight: bold; ">what is acaMEDia?</h2>
                         <p>
                             acaMEDia is a vue.js-based webapp geared towards undergraduate and graduate Science students
                             looking to gain more knowledge about current medical research papers and the flourishing scientific
@@ -28,11 +34,21 @@
                 </div>
                 <br style="clear: both;"/>
                 <div id="about-two">
+                    <h2 style="color: #4886ca; font-family: Marion, 'Times New Roman', Serif; font-weight: bold; ">how can acaMEDia be useful?</h2>
                     <p>
                         Whether it's an undergraduate student looking to kickstart their lifelong passion in a scientific
                         specialization or it's a graduate student looking to contribute towards a lab with publications
                         that align to their interests, we are confident that acaMEDia can help bridge the gap and bring
                         more young minds in contact with medical research.
+                    </p>
+                </div>
+                <br style="clear: both;"/>
+                <div id="about-three">
+                    <h2 style="color: #4886ca; font-family: Marion, 'Times New Roman', Serif; font-weight: bold; ">can this idea be extended further?</h2>
+                    <p>
+                        Of course! The construction and design we put into acaMEDia can be applied to other fields, not just medical research.
+                        There is immense opportunity to extend our system design to fields in academia, from Anthropology to Zoology.
+                        Use our cloud based webapp to reach for the sky (pun intended)!
                     </p>
                 </div>
             </div>
@@ -133,7 +149,7 @@
     }
     #header-container{
         position:relative;
-        margin-top: 12%;
+        margin-top: 2%;
     }
     #header-img, #bottom-shelf-img{
         width:100%;
@@ -207,7 +223,12 @@
         width: 40%;
         height: auto;
     }
-
+    #about-three {
+        display: inline-block;
+        margin-top: 5%;
+        width: 40%;
+        height: auto;
+    }
     #how-to-use {
         display: inline-block;
         margin: 70px;
@@ -260,6 +281,35 @@
     .creator-image:hover{
         max-width: 300px;
         transition: 0.3s;
+    }
+    #posty-container{
+        text-align: right;
+        height: 100px;
+    }
+    #yellow-posty{
+        margin-right: 3%;
+        x-transition: all 3s ease-in-out;
+        animation: aniposty 5.1s infinite;
+    }
+    #orange-posty {
+        margin-right: 15%;
+    }
+    #blue-posty{
+        float:left;
+        margin-left: 5%;
+        x-transition: all 3s ease-in-out;
+        animation: aniposty 5.1s infinite;
+    }
+    @keyframes aniposty {
+        0% {
+            margin-top: 0px;
+        }
+        50% {
+            margin-top: 5%;
+        }
+        100% {
+            margin-top: 0px;
+        }
     }
 
 
