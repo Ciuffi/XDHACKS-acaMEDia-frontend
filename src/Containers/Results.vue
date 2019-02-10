@@ -12,58 +12,13 @@
     export default {
         name: "Results",
         components: {LabItem},
-        props: ["switchLabView"],
+        props: ["switchLabView", "queryResponse"],
 
         methods: {
             goToLabView: function (lab) {
                 this.switchLabView(lab)
             }
         },
-        data: function () {
-            return {
-                queryResponse: [
-                    {
-                        name: "lab1",
-                        location: "vancouver",
-                        url: "https://google.com",
-                        articles: [
-                            {
-                                title: "article1",
-                                date: new Date()
-                            },
-                            {
-                                title: "article2",
-                                date: new Date()
-                            }
-                        ],
-                        person: {
-                            name: "Fabio Rossi",
-                            email: "fa"
-                        }
-                    },
-                    {
-                        name: "lab2",
-                        location: "Sierra",
-                        url: "https://google.ca",
-                        articles: [
-                            {
-                                title: "article3",
-                                date: new Date()
-                            },
-                            {
-                                title: "article5",
-                                date: new Date()
-
-                            }
-                        ],
-                        person: {
-                            name: "Austin Koby",
-                            email: "austin@austin.com"
-                        }
-                        },
-                ]
-            }
-        }
     }
 </script>
 

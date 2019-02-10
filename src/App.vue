@@ -13,7 +13,7 @@
   import Results from "./Containers/Results"
   import labView from "./Containers/labView"
   import axios from 'axios';
-  const queryURL = "";
+  const queryURL = "https://t-solstice-224300.appspot.com/query";
   const scroller = {
     methods: {
       switchPage: function (className) {
@@ -51,17 +51,20 @@
     },
     methods: {
       getArticleData: function (query, location) {
+        console.log("called")
         const cutQuery = query.split(" ").join(",");
         axios.get(queryURL, {
           params: {
-            terms: cutQuery,
+            term: cutQuery,
             location: location
           }
-        }).then(function (response) {
+        }).then((response) => {
+          console.log("gottem");
           console.log(response);
-          this.queryResponse = response;
+          this.queryResponse = response.data;
           this.currentComponent = "Results"
         }).catch(function (error) {
+          console.log("error..")
           console.error(error);
         })
       },

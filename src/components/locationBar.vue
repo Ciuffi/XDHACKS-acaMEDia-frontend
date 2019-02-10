@@ -13,22 +13,28 @@
 </template>
 
 <script>
-
-    const locationOptions = [
-        "USA",
-        "Canada",
-        "Mexico",
-        "Italy",
-        "Nippon"
-    ]
+    import axios from "axios"
     export default {
         name: "locationBar",
         props: ["locationSelection"],
         data: function () {
             return {
-                locationOptions: locationOptions,
+                locationOptions: {},
             }
         },
+        methods: {
+            populateLocationOptions: function () {
+                axios.get("https://t-solstice-224300.appspot.com/location")
+                    .then((response) =>{
+                        this.locationOptions = {...response.data};
+                    }).catch(function (Error) {
+                    console.error(Error)
+                })
+            }
+        },
+        mounted () {
+            this.populateLocationOptions()
+        }
     }
 </script>
 
