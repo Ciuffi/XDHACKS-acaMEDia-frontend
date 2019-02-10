@@ -1,6 +1,6 @@
 <template>
     <div class="home" id="home">
-        <img class="logo" alt="acaMEDia logo" src="../assets/logo.png">
+        <img class="logo" alt="acaMEDia logo" src="../assets/acamedia-header.png">
         <search-bar v-on:search="searchHandler"></search-bar>
         <location-bar v-on:updateOptions="updateLocationHandler"></location-bar>
         <homeContent class="about" title="About">
@@ -65,5 +65,7 @@
 </script>
 
 <style scoped>
-
+    .home{
+        background-color: #d8e5f8;
+    }
 </style>
