@@ -20,7 +20,7 @@
         props: ["lab", "back"],
         methods:{
             formatDate: function (date) {
-                return date.toJSON().slice(0, 10);
+                return date.slice(0, 10);
             }
         }
     }
