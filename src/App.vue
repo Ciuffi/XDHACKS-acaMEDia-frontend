@@ -72,6 +72,9 @@
       returnToSearch: function () {
           this.selectedLab = null;
           this.currentComponent = "Results"
+      },
+      returnToHome: function () {
+        this.currentComponent = "Home"
       }
     },
     computed: {
@@ -88,7 +91,8 @@
         }else{
           return {
             queryResponse: this.queryResponse,
-            switchLabView: this.openLabView
+            switchLabView: this.openLabView,
+            back: this.returnToHome
           }
         }
       }
@@ -102,5 +106,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #d8e5f8;
+  height: 100%;
 }
+  html {
+    background-color: #d8e5f8;
+  }
 </style>
