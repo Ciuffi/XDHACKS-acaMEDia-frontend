@@ -1,5 +1,6 @@
 <template>
     <div class="home" id="home">
+        <img class="logo" alt="acaMEDia logo" src="../assets/logo.png">
         <search-bar v-on:search="searchHandler"></search-bar>
         <location-bar v-on:updateOptions="updateLocationHandler"></location-bar>
         <homeContent class="about" title="About">
@@ -45,10 +46,11 @@
     import LocationBar from "../components/locationBar";
     export default {
         name: "home",
+        props: ["getArticleData"],
         components: {LocationBar, SearchBar, homeContent},
         methods: {
             searchHandler(searchTerm){
-                console.log("get: " + searchTerm + " around: " + this.locationOption)
+                this.getArticleData(searchTerm, this.locationOption)
             },
             updateLocationHandler(selectedOptions){
                 this.locationOption = selectedOptions
@@ -56,7 +58,7 @@
         },
         data: function () {
             return {
-                locationOption: ""
+                locationOption: null
             }
         },
     }

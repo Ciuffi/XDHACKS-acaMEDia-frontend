@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <toolbar v-on:scroll-down="scrollToClass"></toolbar>
-    <img class="logo" alt="acaMEDia logo" src="./assets/logo.png">
-    <home></home>
+    <toolbar v-on:scroll-down="switchPage"></toolbar>
+    <keep-alive>
+      <comment v-bind:is="currentComponent" v-bind="currentProps"></comment>
+    </keep-alive>
   </div>
 </template>
 
 <script>
-
+  import Toolbar from './components/toolbar.vue'
   import Home from "./Containers/Home";
+  import Results from "./Containers/Results"
+  import labView from "./Containers/labView"
+  import axios from 'axios';
+  const queryURL = "";
   const scroller = {
     methods: {
-      scrollToClass(className) {
+      switchPage: function (className) {
+        if (this.currentComponent !== "Home"){
+          this.currentComponent = "Home";
+        }else{
+          this.scrollToClass(className)
+        }
+      },
+      scrollToClass: function (className) {
         // Get the first element with the given class name
         var el = this.$el.getElementsByClassName(className)[0];
         // Get the bounding rectangle so we can get the element position position
@@ -21,13 +33,60 @@
       }
     }
   };
-  import Toolbar from './components/toolbar.vue'
   export default {
     name: 'app',
     mixins: [scroller],
     components: {
       Home,
-      Toolbar
+      Toolbar,
+      Results,
+      labView
+    },
+    data: function () {
+      return {
+        currentComponent: "Home",
+        queryResponse: {},
+        selectedLab: {}
+      }
+    },
+    methods: {
+      getArticleData: function (query, location) {
+        const cutQuery = query.split(" ").join(",");
+        axios.get(queryURL, {
+          params: {
+            terms: cutQuery,
+            location: location
+          }
+        }).then(function (response) {
+          console.log(response);
+          this.queryResponse = response;
+          this.currentComponent = "Results"
+        }).catch(function (error) {
+          console.error(error);
+        })
+      },
+      openLabView: function (lab) {
+        this.selectedLab = lab;
+        this.currentComponent = "labView"
+      }
+    },
+    computed: {
+      currentProps: function () {
+        if (this.currentComponent === "Home"){
+          return {
+            getArticleData: this.getArticleData
+          }
+        }else if (this.currentComponent === "labView"){
+          return {
+            lab: this.selectedLab,
+          }
+        }else{
+          return {
+            queryResponse: this.queryResponse,
+            switchLabView: this.openLabView
+          }
+        }
+      }
     }
   }
 </script>
@@ -37,7 +96,6 @@
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
