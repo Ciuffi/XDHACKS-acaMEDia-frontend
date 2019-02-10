@@ -25,7 +25,7 @@
         },
         methods: {
             populateLocationOptions: function () {
-                axios.get("https://t-solstice-224300.appspot.com/location")
+                axios.get("https://backend-dot-t-solstice-224300.appspot.com/location")
                     .then((response) =>{
                         this.locationOptions = {...response.data};
                     }).catch(function (Error) {
