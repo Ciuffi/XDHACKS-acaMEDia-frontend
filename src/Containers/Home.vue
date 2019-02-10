@@ -86,6 +86,7 @@
     #stuff-on-header-img{
         position: absolute;
         bottom: 10px;
+        width: 70%;
     }
 
 </style>
