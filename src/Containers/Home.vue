@@ -65,19 +65,35 @@
             <br style="clear: both;"/>
         </homeContent>
         <homeContent class="contact" style="margin-top: 20%; margin-left: auto; margin-right: auto;" title="Contact">
-            <div>
-                <img class="creator-image" left src="../assets/Allison.jpg" alt="Allison Chiang"/>
-                <a href="https://www.linkedin.com/in/allison-chiang">Allison Chiang</a>
+            <div class="contact-creator">
+                <a href="https://www.linkedin.com/in/allison-chiang" target="_blank">
+                    <p class="creator-name">Allison Chiang</p>
+                <div class="creator-image-container">
+                        <img left class="creator-image" id="AC" left src="../assets/Allison.jpg" alt="Allison Chiang"/>
+                </div>
+                </a>
             </div>
-            <div>
-                <img right class="creator-image" src="../assets/Austin.jpg" alt="Austin Kobayashi"/>
-                <a href="https://www.linkedin.com/in/austinkobayashi">Austin Kobayashi</a>
+            <div class="contact-creator">
+                <a href="https://www.linkedin.com/in/austinkobayashi" target="_blank">
+                    <p class="creator-name">Austin Kobayashi</p>
+                    <div class="creator-image-container">
+                            <img right class="creator-image" id="AK" src="../assets/Austin.jpg" alt="Austin Kobayashi"/>
+                    </div>
+                </a>
             </div>
-            <div>
-                <img center class="creator-image" src="../assets/Giulio.jpeg" alt="Giulio Rossi"> />
-                <a href="https://www.linkedin.com/in/giulio-rossi-662152110">Giulio Rossi</a>
+            <div class="contact-creator">
+                <a href="https://www.linkedin.com/in/giulio-rossi-662152110" target="_blank">
+                    <p class="creator-name">Giulio Rossi</p>
+                    <div class="creator-image-container">
+                            <img center class="creator-image" id="GR" src="../assets/Giulio.jpeg" alt="Giulio Rossi"/>
+                    </div>
+                </a>
             </div>
         </homeContent>
+        <div style="text-align: center;">
+            <a href="/#" class="btn btn-outline-secondary" style="display: inline-block; margin: 10%;">Back To Top</a>
+            <p> Copyright (c) acaMEDia 2019   ||   Made with love in Vancouver, BC </p>
+        </div>
     </div>
 </template>
 
@@ -106,18 +122,6 @@
 </script>
 
 <style scoped>
-    .contact{
-        width: 100%;
-        text-align: center;
-    }
-    .creator-image{
-        max-width:250px;
-        max-height:250px;
-        width: auto;
-        height: auto;
-        display: inline-block;
-    }
-
     .home{
         background-color: #d8e5f8;
         color: #6c6c77;
@@ -226,7 +230,36 @@
         x-transition: all 1.5s ease-in-out;
         animation: aniup 2.5s infinite;
     }
-    .contact{
-        position:relative;
+    .about, .contact{
+        position: relative;
+        width: 100%;
+        text-align: center;
     }
+    .contact-creator{
+        display: inline-block;
+    }
+    .creator-name{
+        color: #4886ca;
+        font-family: Marion, 'Times New Roman', Serif;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .creator-image-container{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        margin: 20px;
+    }
+    .creator-image{
+        max-width: 250px;
+        transition: 0.3s;
+    }
+    .creator-image:hover{
+        max-width: 300px;
+        transition: 0.3s;
+    }
+
+
 </style>
