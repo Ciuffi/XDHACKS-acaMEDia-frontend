@@ -52,10 +52,11 @@
     methods: {
       getArticleData: function (query, location) {
         const cutQuery = query.split(" ").join(",");
+        const cutLocation = location && location !== "" ? location : "";
         axios.get(queryURL, {
           params: {
             term: cutQuery,
-            location: location ? location && location !== "" : ""
+            location: cutLocation
           }
         }).then((response) => {
           this.queryResponse = response.data;
