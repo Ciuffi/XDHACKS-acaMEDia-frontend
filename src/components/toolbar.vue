@@ -1,8 +1,10 @@
 <template>
-    <div id="'toolbar">
-        <button v-on:click="$emit('scroll-down', 'logo')">Home</button>
-        <button v-on:click="$emit('scroll-down', 'about')">About</button>
-        <button v-on:click="$emit('scroll-down', 'contact')">Contact</button>
+    <div id="toolbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="toolbar-button" href="#">Home</a>
+            <a class="toolbar-button" v-on:click="$emit('scroll-down', 'about')">About</a>
+            <a class="toolbar-button" v-on:click="$emit('scroll-down', 'contact')">Contact</a>
+        </nav>
     </div>
 </template>
 
@@ -13,5 +15,7 @@
 </script>
 
 <style scoped>
+    #toolbar{
+    }
 
 </style>

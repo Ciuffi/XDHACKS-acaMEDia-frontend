@@ -1,8 +1,12 @@
 <template>
     <div class="home" id="home">
-        <img class="logo" alt="acaMEDia logo" src="../assets/acamedia-header.png">
-        <search-bar v-on:search="searchHandler"></search-bar>
-        <location-bar v-on:updateOptions="updateLocationHandler"></location-bar>
+        <div class="container" id="header-container">
+            <img id="header-img" class="logo" alt="acaMEDia logo" src="../assets/acamedia-header.png">
+            <div id="stuff-on-header-img">
+                <search-bar v-on:search="searchHandler"></search-bar>
+                <location-bar v-on:updateOptions="updateLocationHandler"></location-bar>
+            </div>
+        </div>
         <homeContent class="about" title="About">
             <div>
                 <p>
@@ -67,5 +71,21 @@
 <style scoped>
     .home{
         background-color: #d8e5f8;
+        color: #6c6c77;
     }
+    #header-container{
+        position:relative;
+    }
+    #header-img{
+        width:100%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    #stuff-on-header-img{
+        position: absolute;
+        bottom: 10px;
+    }
+
 </style>
