@@ -1,5 +1,6 @@
 <template>
     <div id="labItem">
+        <button v-on:click="back">back</button>
         <h2>{{lab.name}}</h2>
         <div id="data">
             <p>Lab Location: {{lab.location}}</p>
@@ -16,7 +17,7 @@
 <script>
     export default {
         name: "labView",
-        props: ["lab"]
+        props: ["lab", "back"]
     }
 </script>
 

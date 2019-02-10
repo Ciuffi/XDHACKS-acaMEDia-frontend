@@ -16,6 +16,15 @@
 
 <style scoped>
     #toolbar{
+        text-align: center;
+        min-width: 100%;
+        max-height: 25px;
+        min-height: 25px;
+        display: inline-block;
     }
-
+    .toolbar-button {
+        display: inline-block;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 </style>

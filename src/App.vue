@@ -68,6 +68,10 @@
       openLabView: function (lab) {
         this.selectedLab = lab;
         this.currentComponent = "labView"
+      },
+      returnToSearch: function () {
+          this.selectedLab = null;
+          this.currentComponent = "Results"
       }
     },
     computed: {
@@ -79,6 +83,7 @@
         }else if (this.currentComponent === "labView"){
           return {
             lab: this.selectedLab,
+            back: this.returnToSearch
           }
         }else{
           return {

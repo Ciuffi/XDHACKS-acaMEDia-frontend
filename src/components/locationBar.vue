@@ -1,6 +1,6 @@
 <template>
     <div id="locationBar">
-        <label for="select">Location filter: </label>
+        <label style="padding-right: 5%; font-size: 25px; text-align: center" for="select">Location filter: </label>
         <select id="select"
                 class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 v-bind:value="locationSelection"
