@@ -51,20 +51,16 @@
     },
     methods: {
       getArticleData: function (query, location) {
-        console.log("called")
         const cutQuery = query.split(" ").join(",");
         axios.get(queryURL, {
           params: {
             term: cutQuery,
-            location: location
+            location: location ? location : ""
           }
         }).then((response) => {
-          console.log("gottem");
-          console.log(response);
           this.queryResponse = response.data;
           this.currentComponent = "Results"
         }).catch(function (error) {
-          console.log("error..")
           console.error(error);
         })
       },
