@@ -5,7 +5,7 @@
             <p>Lab Location: {{lab.location}}</p>
             <div id="articleItem" v-for="article in shortenedArticleList">
                 <p>Article Name: {{article.title}}</p>
-                <p>Article Date {{formatDate(article.date)}}</p>
+                <p>Article Date: {{formatDate(article.date)}}</p>
             </div>
         </div>
     </div>
@@ -19,17 +19,7 @@
                 this.goToLabView(this.lab)
             },
             formatDate: function (date) {
-                var monthNames = [
-                    "January", "February", "March",
-                    "April", "May", "June", "July",
-                    "August", "September", "October",
-                    "November", "December"
-                ];
-                var day = date.getDate();
-                var monthIndex = date.getMonth();
-                var year = date.getFullYear();
-
-                return day + ' ' + monthNames[monthIndex] + ' ' + year;
+                    return date.slice(0, 10);
             }
         },
         computed: {
