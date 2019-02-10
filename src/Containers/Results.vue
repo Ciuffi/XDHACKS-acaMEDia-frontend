@@ -6,7 +6,10 @@
         </div>
         <div id="labItems">
             <lab-item v-bind:go-to-lab-view="goToLabView" v-for="lab in queryResponse" v-bind:lab="lab"></lab-item>
-            <h2 v-if="!queryResponse || queryResponse.length <=0">No Results :(</h2>
+            <div style="text-align: center" v-if="!queryResponse || queryResponse.length <=0">
+                <img id="no-results-octocat" src="../assets/404-octocat.png">
+                <h2>No results! Try again please :(</h2>
+            </div>
         </div>
     </div>
 </template>
@@ -31,6 +34,23 @@
         height: 100%;
         margin: 0;
         padding: 0;
+    }
+    #no-results-octocat{
+        display: inline-block;
+        height: 300px;
+        x-transition: all 1.5s ease-in-out;
+        animation: aniside 2.5s infinite;
+    }
+    @keyframes aniside {
+        0% {
+            transform: rotate(180deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-180deg);
+        }
     }
 
 </style>
