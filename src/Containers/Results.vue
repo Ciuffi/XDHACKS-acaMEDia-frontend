@@ -3,6 +3,7 @@
         <h1>Results</h1>
         <div id="labItems">
             <lab-item v-bind:go-to-lab-view="goToLabView" v-for="lab in queryResponse" v-bind:lab="lab"></lab-item>
+            <h2 v-if="!queryResponse">No Results :(</h2>
         </div>
     </div>
 </template>

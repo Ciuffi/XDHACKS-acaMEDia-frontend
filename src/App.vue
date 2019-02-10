@@ -55,7 +55,7 @@
         axios.get(queryURL, {
           params: {
             term: cutQuery,
-            location: location ? location : ""
+            location: location ? location && location !== "" : ""
           }
         }).then((response) => {
           this.queryResponse = response.data;
